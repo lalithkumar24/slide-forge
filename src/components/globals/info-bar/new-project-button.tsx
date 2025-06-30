@@ -7,12 +7,11 @@ import { useRouter } from "next/navigation";
 
 const NewProjectButton = ({ user }: { user: User }) => {
   const router = useRouter();
-
   return (
     <Button
       className="rounded-lg font-semibold cursor-pointer"
       disabled={!user.subscription}
-      // onClick={() => }
+      onClick={() => router.push("/create-project")}
     >
       <Plus />
       New Project

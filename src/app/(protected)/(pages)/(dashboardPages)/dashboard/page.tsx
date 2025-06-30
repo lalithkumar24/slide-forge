@@ -1,5 +1,7 @@
 import { getAllProjects } from "@/actions/project";
 import NotFound from "@/components/globals/not-found";
+import ProjectCard from "@/components/globals/project-card";
+import Projects from "@/components/globals/projects";
 
 const DashboardPage = async () => {
   const allProjects = await getAllProjects();
@@ -17,7 +19,7 @@ const DashboardPage = async () => {
       </div>
       {/* {"projects"}*/}
       {allProjects.data && allProjects.data.length > 0 ? (
-        <Projects />
+        <Projects projects={allProjects.data} />
       ) : (
         <NotFound />
       )}
